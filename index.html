@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="container">
+    <header>
+        <div class="searchBlock">
+            <input type="text" class="verticalCenter" id="locationFilter" data-bind="textInput: filter,event: { keyup: reputMarkers }"/>
+        </div>
+        <h1 class="appTitle">游西安</h1>
+        <div id="listBtn" data-bind="click: toggleControlPanel">&#128303</div>
+    </header>
+    <div id="controlPanel" class="controlPanel">
+        <ul id="listView" data-bind="foreach: pointList">
+            <li class="listView-items" data-bind="text: name,visible: $root.isShown($data)"></li>
+        </ul>
+    </div>
+    <div id="map"></div>
+    </div>
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/knockout.js"></script>
+    <script async defer
+     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBa_3CK9SQEz9fzz1wciDfKaGPsW75RhCw&libraries=places,geometry,drawing&callback=initMap">
+    </script>
+    <script>
+        var app = app||{}
+        initMap = function(){
+            app.mapViewModel.initMap()
+        }
+    </script>
+    <script src="js/app.js"></script> 
+</body>
+</html>

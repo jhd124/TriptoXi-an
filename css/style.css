@@ -1,0 +1,88 @@
+ html, body{
+            height: 100%;
+            margin: 0;
+            padding: 0
+        }
+        li{
+            list-style: none;
+        }
+        header{
+            height: 10%;
+            width: 100%;
+            flex-basis: 100%;
+            background-color: #441437
+        }
+        .appTitle{
+            margin: 5px 20px;
+            text-align: right;
+        }
+        .searchBlock{
+            position: absolute;
+            height: 10%;
+        }
+        #listBtn{
+            display: none;
+        }
+        #container{
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .controlPanel{
+            display: inline-block; 
+            height: 90%;
+            width: 200px;
+            overflow: auto;
+            flex: 0.5 auto;
+        }
+        #map{
+            display: inline-block; 
+            height: 90%;
+            flex: 9 auto
+        }
+        .verticalCenter{
+            position: absolute; 
+            height: 1rem;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        .listView-items:hover{
+            cursor: pointer;
+        }
+        #locationFilter{
+            left: 2rem;
+        }
+        @media screen and (max-width: 700px){
+            .controlPanel{
+                position: absolute;
+                left: -100%;
+                top: 10%;
+                z-index: 99;
+                background: #eee;
+            }
+            .controlPanelShow{
+                position: absolute;
+                left: 0;
+                top: 10%;
+                z-index: 99;
+                background: #eee;
+            }
+            #container{
+                height: 100%;
+                flex-wrap: wrap;
+            }
+            #map{
+                  height: 90%;
+                  width: 100%;
+            }
+              .appTitle{
+                  display: none;
+            }
+            #listBtn{
+                display: block;
+                font-size: 2rem;
+                text-align: right;
+                margin-right: 1.5rem;
+            }
+        }
